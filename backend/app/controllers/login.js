@@ -23,7 +23,7 @@ export const login = async (req, res) => {
   }
 
   //Check Password
-  const validPassword = bcrypt.compareSync(req.body.password, password);
+  const validPassword = bcrypt.compareSync(password, user.password);
   if (!validPassword) {
     return res.status(401).json({ message: "Invalid password" });
   }
@@ -45,7 +45,7 @@ export const login = async (req, res) => {
     },
   });
 
-  res.json({
+  res.status(200).json({
     token,
     user: {
       id: user.id,
