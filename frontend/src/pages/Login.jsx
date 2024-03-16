@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [emailValidity, setEmailValidity] = useState("");
@@ -73,12 +74,12 @@ const Login = () => {
           </form>
           <p className="mt-2 text-center text-sm text-gray-600">
             Don’t have an account yet?{" "}
-            <a
-              href="/register"
+            <Link
+              to="/register"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Register
-            </a>
+            </Link>
           </p>
         </div>
       </div>
